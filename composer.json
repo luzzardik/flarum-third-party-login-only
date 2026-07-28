@@ -6,7 +6,12 @@
     "authors": [
         {
             "name": "V17 Development",
-            "email": "info@v17.dev"
+            "email": "info@v17.dev",
+            "role": "Original Developer"
+        },
+        {
+            "name": "luzzardik",
+            "role": "Developer"
         }
     ],
     "homepage": "https://v17.dev/projects/flarum-third-party-login-only",
@@ -20,7 +25,7 @@
         }
     },
     "require": {
-        "flarum/core": "^1.0.0"
+        "flarum/core": "^2.0"
     },
     "extra": {
         "flarum-extension": {
