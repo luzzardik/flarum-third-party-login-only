@@ -37,9 +37,30 @@ return [
 
     // Register settings to forum
     (new Extend\Settings)
-        ->serializeToForum('forgotPasswordLink', 'v17development-third-party-login-only.forgotPasswordLink', null, "")
-        ->serializeToForum('replaceLoginWithFoFPassport', 'v17development-third-party-login-only.replaceLoginWithFoFPassport', null, false)
-        ->serializeToForum('changePasswordLink', 'v17development-third-party-login-only.changePasswordLink', null, "")
-        ->serializeToForum('allowChangeMail', 'v17development-third-party-login-only.allowChangeMail', null, false)
-        ->serializeToForum('signUpWelcomeText', 'v17development-third-party-login-only.signUpWelcomeText', null, "")
+    ->serializeToForum(
+        'forgotPasswordLink',
+        'v17development-third-party-login-only.forgotPasswordLink'
+    )
+    ->serializeToForum(
+        'replaceLoginWithFoFPassport',
+        'v17development-third-party-login-only.replaceLoginWithFoFPassport'
+    )
+    ->serializeToForum(
+        'changePasswordLink',
+        'v17development-third-party-login-only.changePasswordLink'
+    )
+    ->serializeToForum(
+        'allowChangeMail',
+        'v17development-third-party-login-only.allowChangeMail'
+    )
+    ->serializeToForum(
+        'signUpWelcomeText',
+        'v17development-third-party-login-only.signUpWelcomeText'
+    )
+
+    ->default('v17development-third-party-login-only.forgotPasswordLink', '')
+    ->default('v17development-third-party-login-only.replaceLoginWithFoFPassport', false)
+    ->default('v17development-third-party-login-only.changePasswordLink', '')
+    ->default('v17development-third-party-login-only.allowChangeMail', false)
+    ->default('v17development-third-party-login-only.signUpWelcomeText', '');
 ];
