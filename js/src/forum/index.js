@@ -54,25 +54,28 @@ app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
       return;
     }
 
+    // TODO: make settings to remove Sign Up button
+    // TODO: make settings to switch between FoFPassport and Generic
+    
     if (app.forum.attribute("allowSignUp")) {
-      items.replace(
+      items.override(
         "signUp",
         LogInButton.component(
           {
             className: "Button Button--link",
-            path: "/auth/passport",
+            path: "/auth/generic",
           },
           app.translator.trans("core.forum.header.sign_up_link")
         )
       );
     }
 
-    items.replace(
+    items.override(
       "logIn",
       LogInButton.component(
         {
           className: "Button Button--link",
-          path: "/auth/passport",
+          path: "/auth/generic",
         },
         app.translator.trans("core.forum.header.log_in_link")
       )
@@ -83,7 +86,7 @@ app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
     items
   ) {
     if (app.forum.attribute("changePasswordLink")) {
-      items.replace(
+      items.override(
         "changePassword",
         <a
           href={app.forum.attribute("changePasswordLink")}
