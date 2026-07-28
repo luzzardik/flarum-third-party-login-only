@@ -4,7 +4,8 @@ import app from "flarum/admin/app";
 export default [
   new Extend.Admin()
     .setting(() => ({
-      setting: "v17development-third-party-login-only.replaceLoginWithFoFPassport",
+      setting:
+        "v17development-third-party-login-only.replaceLoginWithFoFPassport",
       label: "Replace Sign In and Sign Up button",
       help: (
         <span>
