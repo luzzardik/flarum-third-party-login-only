@@ -62,5 +62,5 @@ return [
     ->default('v17development-third-party-login-only.replaceLoginWithFoFPassport', false)
     ->default('v17development-third-party-login-only.changePasswordLink', '')
     ->default('v17development-third-party-login-only.allowChangeMail', false)
-    ->default('v17development-third-party-login-only.signUpWelcomeText', '');
+    ->default('v17development-third-party-login-only.signUpWelcomeText', '')
 ];
