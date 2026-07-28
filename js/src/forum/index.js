@@ -56,7 +56,7 @@ app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
 
     // TODO: make settings to remove Sign Up button
     // TODO: make settings to switch between FoFPassport and Generic
-    
+
     if (app.forum.attribute("allowSignUp")) {
       items.override(
         "signUp",
