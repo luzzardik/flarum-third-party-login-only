@@ -1,11 +1,10 @@
+import Extend from "flarum/common/extenders";
 import app from "flarum/admin/app";
 
-app.initializers.add("v17development-third-party-login-only", () => {
-  app.extensionData
-    .for("v17development-third-party-login-only")
-    .registerSetting({
-      setting:
-        "v17development-third-party-login-only.replaceLoginWithFoFPassport",
+export default [
+  new Extend.Admin()
+    .setting(() => ({
+      setting: "v17development-third-party-login-only.replaceLoginWithFoFPassport",
       label: "Replace Sign In and Sign Up button",
       help: (
         <span>
@@ -19,9 +18,10 @@ app.initializers.add("v17development-third-party-login-only", () => {
           </a>
         </span>
       ),
-      type: "switch",
-    })
-    .registerSetting({
+      type: "boolean",
+    }))
+
+    .setting(() => ({
       setting: "v17development-third-party-login-only.allowChangeMail",
       label: "Allow user to change their email",
       help: (
@@ -36,9 +36,10 @@ app.initializers.add("v17development-third-party-login-only", () => {
           </a>
         </span>
       ),
-      type: "switch",
-    })
-    .registerSetting({
+      type: "boolean",
+    }))
+
+    .setting(() => ({
       setting: "v17development-third-party-login-only.forgotPasswordLink",
       label: "Forgot password link",
       help: (
@@ -55,9 +56,9 @@ app.initializers.add("v17development-third-party-login-only", () => {
         </span>
       ),
       type: "text",
-      placeholder: "https://example.com/forgot",
-    })
-    .registerSetting({
+    }))
+
+    .setting(() => ({
       setting: "v17development-third-party-login-only.changePasswordLink",
       label: "Change password link",
       help: (
@@ -73,9 +74,9 @@ app.initializers.add("v17development-third-party-login-only", () => {
         </span>
       ),
       type: "text",
-      placeholder: "https://example.com/account",
-    })
-    .registerSetting({
+    }))
+
+    .setting(() => ({
       setting: "v17development-third-party-login-only.signUpWelcomeText",
       label: "New account welcome text",
       help: (
@@ -91,6 +92,5 @@ app.initializers.add("v17development-third-party-login-only", () => {
         </span>
       ),
       type: "text",
-      placeholder: "",
-    });
-});
+    })),
+];
