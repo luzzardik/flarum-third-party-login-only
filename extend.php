@@ -3,6 +3,7 @@
 namespace luzzardik\FlarumThirdPartyLoginOnly;
 
 use Flarum\Extend;
+use luzzardik\FlarumThirdPartyLoginOnly\Api\CreateUserController;
 
 return [
     // Forum
