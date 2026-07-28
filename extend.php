@@ -31,10 +31,11 @@ return [
     // Remove api endpoints
     (new Extend\Routes('api'))
         ->remove('forgot')
-        ->post('/forgot', 'forgot.disabled', Api\ApiRouteDisabledController::class)
+        ->post('/forgot', 'forgot.disabled', Api\ApiRouteDisabledController::class),
 
-        ->remove('users.create')
-        ->post('/users', 'users.create', Api\CreateUserController::class),
+        // Setup middleware
+        (new Extend\Middleware('api'))
+                ->add(Middleware\BlockNormalRegistration::class),
 
     // Register settings to forum
     (new Extend\Settings)
