@@ -1,11 +1,9 @@
 import Extend from "flarum/common/extenders";
-import app from "flarum/admin/app";
 
 export default [
   new Extend.Admin()
     .setting(() => ({
-      setting:
-        "v17development-third-party-login-only.replaceLoginWithFoFPassport",
+      setting: "luzzardik-third-party-login-only.replaceLoginWithFoFPassport",
       label: "Replace Sign In and Sign Up button",
       help: (
         <span>
@@ -23,7 +21,7 @@ export default [
     }))
 
     .setting(() => ({
-      setting: "v17development-third-party-login-only.allowChangeMail",
+      setting: "luzzardik-third-party-login-only.allowChangeMail",
       label: "Allow user to change their email",
       help: (
         <span>
@@ -41,7 +39,7 @@ export default [
     }))
 
     .setting(() => ({
-      setting: "v17development-third-party-login-only.forgotPasswordLink",
+      setting: "luzzardik-third-party-login-only.forgotPasswordLink",
       label: "Forgot password link",
       help: (
         <span>
@@ -60,7 +58,7 @@ export default [
     }))
 
     .setting(() => ({
-      setting: "v17development-third-party-login-only.changePasswordLink",
+      setting: "luzzardik-third-party-login-only.changePasswordLink",
       label: "Change password link",
       help: (
         <span>
@@ -78,7 +76,7 @@ export default [
     }))
 
     .setting(() => ({
-      setting: "v17development-third-party-login-only.signUpWelcomeText",
+      setting: "luzzardik-third-party-login-only.signUpWelcomeText",
       label: "New account welcome text",
       help: (
         <span>
