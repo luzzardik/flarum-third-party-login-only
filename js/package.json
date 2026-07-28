@@ -1,5 +1,5 @@
 {
-    "name": "@v17development/flarum-remote-login-only",
+    "name": "@luzzardik/flarum-remote-login-only",
     "version": "0.0.0",
     "scripts": {
         "build": "webpack --mode production",

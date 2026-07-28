@@ -1,6 +1,6 @@
 <?php
 
-namespace V17Development\FlarumThirdPartyLoginOnly\Api;
+namespace luzzardik\FlarumThirdPartyLoginOnly\Api;
 
 use Flarum\Api\Serializer\CurrentUserSerializer;
 use Flarum\Http\RequestUtil;

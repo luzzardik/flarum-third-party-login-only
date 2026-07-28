@@ -1,6 +1,6 @@
 <?php
 
-namespace V17Development\FlarumThirdPartyLoginOnly;
+namespace luzzardik\FlarumThirdPartyLoginOnly;
 
 use Flarum\Extend;
 
@@ -39,28 +39,28 @@ return [
     (new Extend\Settings)
     ->serializeToForum(
         'forgotPasswordLink',
-        'v17development-third-party-login-only.forgotPasswordLink'
+        'luzzardik-third-party-login-only.forgotPasswordLink'
     )
     ->serializeToForum(
         'replaceLoginWithFoFPassport',
-        'v17development-third-party-login-only.replaceLoginWithFoFPassport'
+        'luzzardik-third-party-login-only.replaceLoginWithFoFPassport'
     )
     ->serializeToForum(
         'changePasswordLink',
-        'v17development-third-party-login-only.changePasswordLink'
+        'luzzardik-third-party-login-only.changePasswordLink'
     )
     ->serializeToForum(
         'allowChangeMail',
-        'v17development-third-party-login-only.allowChangeMail'
+        'luzzardik-third-party-login-only.allowChangeMail'
     )
     ->serializeToForum(
         'signUpWelcomeText',
-        'v17development-third-party-login-only.signUpWelcomeText'
+        'luzzardik-third-party-login-only.signUpWelcomeText'
     )
 
-    ->default('v17development-third-party-login-only.forgotPasswordLink', '')
-    ->default('v17development-third-party-login-only.replaceLoginWithFoFPassport', false)
-    ->default('v17development-third-party-login-only.changePasswordLink', '')
-    ->default('v17development-third-party-login-only.allowChangeMail', false)
-    ->default('v17development-third-party-login-only.signUpWelcomeText', '')
+    ->default('luzzardik-third-party-login-only.forgotPasswordLink', '')
+    ->default('luzzardik-third-party-login-only.replaceLoginWithFoFPassport', false)
+    ->default('luzzardik-third-party-login-only.changePasswordLink', '')
+    ->default('luzzardik-third-party-login-only.allowChangeMail', false)
+    ->default('luzzardik-third-party-login-only.signUpWelcomeText', '')
 ];

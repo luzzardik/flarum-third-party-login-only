@@ -7,7 +7,7 @@ import HeaderSecondary from "flarum/forum/components/HeaderSecondary";
 import LogInButton from "flarum/forum/components/LogInButton";
 import SettingsPage from "flarum/forum/components/SettingsPage";
 
-app.initializers.add("v17development-flarum-third-party-login-only", () => {
+app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
   // Hide login form
   extend(LogInModal.prototype, "fields", function (items) {
     items.remove("identification");
