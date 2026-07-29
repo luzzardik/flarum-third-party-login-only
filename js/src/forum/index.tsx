@@ -64,7 +64,7 @@ app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
     // TODO: make settings to remove Sign Up button
     // TODO: make settings to switch between FoFPassport and Generic
 
-    if (app.forum.attribute("allowSignUp")) {
+    if (app.forum.attribute("allowSignUp") && items.has("signUp")) {
       items.setContent(
         "signUp",
         LogInButton.component(
@@ -77,16 +77,18 @@ app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
       );
     }
 
-    items.setContent(
-      "logIn",
-      LogInButton.component(
-        {
-          className: "Button Button--link",
-          path: "/auth/generic",
-        },
-        app.translator.trans("core.forum.header.log_in_link")
-      )
-    );
+    if (items.has("logIn")) {
+      items.setContent(
+        "logIn",
+        LogInButton.component(
+          {
+            className: "Button Button--link",
+            path: "/auth/generic",
+          },
+          app.translator.trans("core.forum.header.log_in_link")
+        )
+      );
+    }
   });
 
   extend("flarum/forum/components/SettingsPage", "accountItems", function (
