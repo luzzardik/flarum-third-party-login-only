@@ -2,16 +2,17 @@ import app from "flarum/forum/app";
 import { extend, override } from "flarum/common/extend";
 
 import LogInButton from "flarum/forum/components/LogInButton";
+import ItemList from "flarum/common/utils/ItemList";
 
 app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
-  extend("flarum/forum/components/LogInModal", "fields", function (items) {
+  extend("flarum/forum/components/LogInModal", "fields", function (items: ItemList<any>) {
     items.remove("identification");
     items.remove("password");
     items.remove("remember");
     items.remove("submit");
   });
 
-  extend("flarum/forum/components/SignUpModal", "fields", function (items) {
+  extend("flarum/forum/components/SignUpModal", "fields", function (items: ItemList<any>) {
     if (this.attrs.token && app.forum.attribute("signUpWelcomeText")) {
       items.add(
         "welcome-message",
@@ -49,7 +50,7 @@ app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
     );
   });
 
-  extend("flarum/forum/components/HeaderSecondary", "items", function (items) {
+  extend("flarum/forum/components/HeaderSecondary", "items", function (items: ItemList<any>) {
     if (!app.forum.attribute("replaceLoginWithFoFPassport")) {
       return;
     }
@@ -58,7 +59,7 @@ app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
     // TODO: make settings to switch between FoFPassport and Generic
 
     if (app.forum.attribute("allowSignUp")) {
-      items.override(
+      items.setContent(
         "signUp",
         LogInButton.component(
           {
@@ -70,7 +71,7 @@ app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
       );
     }
 
-    items.override(
+    items.setContent(
       "logIn",
       LogInButton.component(
         {
@@ -83,10 +84,10 @@ app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
   });
 
   extend("flarum/forum/components/SettingsPage", "accountItems", function (
-    items
+    items: ItemList<any>
   ) {
     if (app.forum.attribute("changePasswordLink")) {
-      items.override(
+      items.setContent(
         "changePassword",
         <a
           href={app.forum.attribute("changePasswordLink")}

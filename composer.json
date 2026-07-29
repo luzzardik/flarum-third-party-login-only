@@ -24,6 +24,7 @@
             "luzzardik\\FlarumThirdPartyLoginOnly\\": "src/"
         }
     },
+    "minimum-stability": "beta",
     "require": {
         "flarum/core": "^2.0"
     },
