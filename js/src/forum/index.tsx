@@ -65,29 +65,33 @@ app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
     // TODO: make settings to switch between FoFPassport and Generic
 
     if (app.forum.attribute("allowSignUp") && items.has("signUp")) {
-      items.setContent(
-        "signUp",
-        LogInButton.component(
-          {
-            className: "Button Button--link",
-            path: "/auth/generic",
-          },
-          app.translator.trans("core.forum.header.sign_up_link")
-        )
-      );
+      try {
+        items.setContent(
+          "signUp",
+          LogInButton.component(
+            {
+              className: "Button Button--link",
+              path: "/auth/generic",
+            },
+            app.translator.trans("core.forum.header.sign_up_link")
+          )
+        );
+      } catch (e) {}
     }
 
     if (items.has("logIn")) {
-      items.setContent(
-        "logIn",
-        LogInButton.component(
-          {
-            className: "Button Button--link",
-            path: "/auth/generic",
-          },
-          app.translator.trans("core.forum.header.log_in_link")
-        )
-      );
+      try {
+        items.setContent(
+          "logIn",
+          LogInButton.component(
+            {
+              className: "Button Button--link",
+              path: "/auth/generic",
+            },
+            app.translator.trans("core.forum.header.log_in_link")
+          )
+        );
+      } catch (e) {}
     }
   });
 
