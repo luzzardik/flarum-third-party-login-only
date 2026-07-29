@@ -5,14 +5,18 @@ import LogInButton from "flarum/forum/components/LogInButton";
 import ItemList from "flarum/common/utils/ItemList";
 
 app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
-  extend("flarum/forum/components/LogInModal", "fields", function (items: ItemList<any>) {
+  extend("flarum/forum/components/LogInModal", "fields", function (
+    items: ItemList<any>
+  ) {
     items.remove("identification");
     items.remove("password");
     items.remove("remember");
     items.remove("submit");
   });
 
-  extend("flarum/forum/components/SignUpModal", "fields", function (items: ItemList<any>) {
+  extend("flarum/forum/components/SignUpModal", "fields", function (
+    items: ItemList<any>
+  ) {
     if (this.attrs.token && app.forum.attribute("signUpWelcomeText")) {
       items.add(
         "welcome-message",
@@ -50,7 +54,9 @@ app.initializers.add("luzzardik-flarum-third-party-login-only", () => {
     );
   });
 
-  extend("flarum/forum/components/HeaderSecondary", "items", function (items: ItemList<any>) {
+  extend("flarum/forum/components/HeaderSecondary", "items", function (
+    items: ItemList<any>
+  ) {
     if (!app.forum.attribute("replaceLoginWithFoFPassport")) {
       return;
     }
